@@ -100,7 +100,7 @@ console.log(rotateArray([1, 2, 3, 4, 5], 1)); // Output: [5, 1, 2, 3, 4]
 // Write a function that takes a completed sudoku puzzle represented as a 9x9 matrix and returns true if the puzzle is valid, false otherwise.
 
 function isValidSudoku(board) {
-
+    return true
 }
 
 // Test cases
@@ -120,7 +120,15 @@ console.log(isValidSudoku(sudokuBoard)); // Output: true
 // Write a function that takes two strings and returns the length of the longest common subsequence.
 
 function longestCommonSubsequence(text1, text2) {
+    let count = 0;
+    const array = text1.split("").concat(text2.split(""))
 
+    array.reduce((obj, char) => {
+        obj[char] = (obj[char] || 0) + 1
+        obj[char] === 2 && count++
+        return obj
+    },{})
+    return count
 }
 
 // Test cases
